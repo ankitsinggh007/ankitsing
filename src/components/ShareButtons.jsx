@@ -4,14 +4,17 @@ const ShareButtons = () => {
   const handleShareFacebook = () => {
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`);
   };
+  
 
   const handleShareTwitter = () => {
-    window.open(`https://twitter.com/share?url=${encodeURIComponent(window.location.href)}`);
+    window.open(`https://twitter.com/share?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent('Check out this random image!')}`);
   };
+  
 
   const handleShareWhatsApp = () => {
-    window.open(`https://wa.me/?text=${encodeURIComponent(window.location.href)}`);
+    window.open(`https://wa.me/?text=${encodeURIComponent('Check out this random image!')} ${encodeURIComponent(window.location.href)}`);
   };
+  
 
   return (
     <div>

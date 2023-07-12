@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import {FacebookShareButton} from "react-share"
-import {TwitterShareButton} from "react-share"
-import {WhatsappShareButton} from "react-share"
+import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share';
+
 const App = () => {
   const [imageUrl, setImageUrl] = useState('');
   const [loading, setLoading] = useState(true);
@@ -20,6 +19,7 @@ const App = () => {
       console.error('Error fetching random image:', error);
     }
   };
+  
 
   const shareUrl = window.location.href;
 

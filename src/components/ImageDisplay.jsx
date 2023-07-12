@@ -11,13 +11,14 @@ const ImageDisplay = () => {
 
   const fetchRandomImage = async () => {
     try {
-      const response = await fetch('https://picsum.photos/'); // Replace with the actual image API URL
+      const response = await fetch('https://picsum.photos/500');
       const data = await response.json();
       setImageUrl(data.url);
     } catch (error) {
       console.error('Error fetching random image:', error);
     }
   };
+  
 
   return (
     <div>
@@ -28,7 +29,8 @@ const ImageDisplay = () => {
         <meta property="og:title" content={'My Website'} />
         <meta property="og:type" content={'Website'} />
       </Helmet>
-      <img src={'https://picsum.photos/'} alt="Random Image" style={{ display: 'block', margin: '0 auto' }} />
+      <img src={imageUrl} alt="Random Image" style={{ display: 'block', margin: '0 auto' }} />
+
       <ShareButtons />
     </div>
   );
