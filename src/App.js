@@ -30,7 +30,7 @@ const App = () => {
     <div>
       <Helmet>
         <meta property="og:image" content={imageUrl} />
-        <meta property="og:url" content={shareUrl} />
+        <meta property="og:url" content={window.location.href} />
         <meta property="og:description" content="random image generator" />
         <meta property="og:title" content="My Website" />
         <meta property="og:type" content="website" />
@@ -41,6 +41,7 @@ const App = () => {
         <meta name="twitter:title" content="My Website" />
         <meta name="twitter:description" content="random image generator" />
         <meta name="twitter:image" content={imageUrl} />
+        {console.log(imageUrl,"image")}
       </Helmet>
 
       <img src={imageUrl} alt={imageUrl} style={{ display: 'block', margin: '0 auto' }} />
