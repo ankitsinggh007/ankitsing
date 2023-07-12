@@ -34,6 +34,7 @@ const App = () => {
         <meta property="og:description" content="random image generator" />
         <meta property="og:title" content="My Website" />
         <meta property="og:type" content="website" />
+        {console.log(imageUrl,"image")}
       </Helmet>
 
       <img src={imageUrl} alt="Random Image" style={{ display: 'block', margin: '0 auto' }} />
