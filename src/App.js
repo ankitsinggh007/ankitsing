@@ -19,7 +19,6 @@ const App = () => {
       console.error('Error fetching random image:', error);
     }
   };
-  
 
   const shareUrl = window.location.href;
 
@@ -32,12 +31,19 @@ const App = () => {
       <Helmet>
         <meta property="og:image" content={imageUrl} />
         <meta property="og:url" content={shareUrl} />
-        <meta property="og:description" content={"random image generator"} />
-        <meta property="og:title" content={'My Website'} />
-        <meta property="og:type" content={'Website'} />
+        <meta property="og:description" content="random image generator" />
+        <meta property="og:title" content="My Website" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter specific meta tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="My Website" />
+        <meta name="twitter:description" content="random image generator" />
+        <meta name="twitter:image" content={imageUrl} />
       </Helmet>
+
       <img src={imageUrl} alt={imageUrl} style={{ display: 'block', margin: '0 auto' }} />
-      <div style={{display:"flex",justifyContent:"space-evenly"}}>
+      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
         <FacebookShareButton url={shareUrl}>
           Facebook
         </FacebookShareButton>
@@ -51,4 +57,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;
