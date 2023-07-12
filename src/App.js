@@ -27,14 +27,12 @@ const App = () => {
 
   return (
     <div>
-      <Helmet>
-      <meta property="og:image" content={imageUrl} />
-      <meta property="og:url" content={shareUrl} />
-      <meta property="og:description" content={"random image generator"} />
-      <meta property="og:title" content={'My Website'} />
-      <meta property="og:type" content={'Website'} />
-      {console.log("in meta tag ",imageUrl,)}
-      {/* Set the image URL as the og:image */}
+       <Helmet>
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:description" content={"random image generator"} />
+        <meta property="og:title" content={'My Website'} />
+        <meta property="og:type" content={'Website'} />
       </Helmet>
       <img src={imageUrl} alt={imageUrl} style={{ display: 'block', margin: '0 auto' }} />
       <div style={{display:"flex",justifyContent:"space-evenly"}}>
