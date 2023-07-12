@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import ShareButtons from './ShareButtons';
 
 const ImageDisplay = () => {
@@ -20,6 +21,13 @@ const ImageDisplay = () => {
 
   return (
     <div>
+      <Helmet>
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:description" content={"random image generator"} />
+        <meta property="og:title" content={'My Website'} />
+        <meta property="og:type" content={'Website'} />
+      </Helmet>
       <img src={'https://picsum.photos/'} alt="Random Image" style={{ display: 'block', margin: '0 auto' }} />
       <ShareButtons />
     </div>

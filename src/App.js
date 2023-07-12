@@ -1,11 +1,11 @@
-import './App.css'
-import  { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-
-import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share';
-
+import {FacebookShareButton} from "react-share"
+import {TwitterShareButton} from "react-share"
+import {WhatsappShareButton} from "react-share"
 const App = () => {
   const [imageUrl, setImageUrl] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchRandomImage();
@@ -13,23 +13,25 @@ const App = () => {
 
   const fetchRandomImage = async () => {
     try {
-      const response = await fetch('https://picsum.photos/500'); // Fetch a random image from picsum.photos
-      console.log(response,"response")
-      console.log(response);
-      
+      const response = await fetch('https://picsum.photos/500');
       setImageUrl(response.url);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching random image:', error);
     }
   };
 
-  const shareUrl = window.location.href; // Get the current page URL
+  const shareUrl = window.location.href;
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <meta property="og:image" content={imageUrl} />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={shareUrl} />
         <meta property="og:description" content={"random image generator"} />
         <meta property="og:title" content={'My Website'} />
         <meta property="og:type" content={'Website'} />
@@ -49,5 +51,4 @@ const App = () => {
     </div>
   );
 };
-
 export default App;
