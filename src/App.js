@@ -37,6 +37,7 @@ const App = () => {
 
         {/* Twitter specific meta tags */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="My Website" />
         <meta name="twitter:description" content="random image generator" />
         <meta name="twitter:image" content={imageUrl} />
